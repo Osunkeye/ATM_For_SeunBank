@@ -1,0 +1,57 @@
+from datetime import datetime
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
+print("Welcome to Seunbank")
+print(dt_string)
+print("")
+name = input("What is your name? \n")
+username = ("Seun", "Jeyin","Toyosi")
+userPassword = ("Seun", "Jeyin","Toyosi")
+Balances = [50999, 100000,62800]
+
+if  (name in username):
+    password = input("Your Password? \n")
+    userid = username.index(name)
+    bal = username.index(name)
+    userBalance = Balances[bal]
+
+    if(password == userPassword[userid]):
+        print("Welcome %s" % name)
+        print("These are the options available:")
+        print("1. Withdrawal")
+        print("2. Deposit")
+        print("3. Complaint")
+
+        selectedOption = int(input("Please select an option \n"))
+
+        if(selectedOption == 1):
+            print("How much would you like to withdraw?")
+            print("your balance is %s" % userBalance)
+            withdrawalAmount = int(input(":"))
+            print("Please take your cash")
+            print("Current Balance: ", userBalance - withdrawalAmount)
+            print("Thank you for banking with us.")
+
+        elif (selectedOption == 2):
+            print("How much would you like to deposit?")
+            print("your balance is %s" % userBalance)
+            depositAmount = int(input(":"))
+            print("Cash Deposit Received")
+            print("Current Balance: ", userBalance + depositAmount)
+            print("Thank you for banking with us.")
+
+        elif (selectedOption == 3):
+            print("What issue will you like to report %s?" % name)
+            issueComplaint = input(":")
+            print("Issues Logged Successfully.")
+            print("Thank you for contacting us")
+
+        else:
+            print("Invalid option selected. Please try again.")
+
+    else:
+        print("Incorrect Passwoord. Please try again.")
+
+else:
+    print("Incorrect name. Please try again.")
